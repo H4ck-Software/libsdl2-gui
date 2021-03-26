@@ -1,0 +1,5 @@
+# libsdl2-gui .gitignore file
+
+# ignore CMake build directory
+
+build/
