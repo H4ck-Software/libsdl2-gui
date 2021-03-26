@@ -1,8 +1,4 @@
-#include <libyardland/gui/texture.hpp>
-
-//Rendered texture
-Texture gTextTexture;
-
+#include <libsdl2-gui/texture.hpp>
 
 Texture::Texture()
 {
