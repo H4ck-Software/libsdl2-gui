@@ -2,7 +2,8 @@
 
 #include <string>
 
-#include <libyardland/gui/gui.hpp>
+#include <libsdl2-gui/libsdl2-gui.hpp>
+#include <libsdl2-gui/transform.hpp>
 
 /**
  * \brief Texture wrapper class.
@@ -36,24 +37,9 @@ public:
     void OnRender(SDL_Renderer* renderer);
 
     /**
-     * \brief Transform2D.
-     */
-    struct transform
-    {
-        /**
-         * \brief The scale of this texture.
-         */
-        Vector2 scale;
-        
-        /**
-         * \brief The position of this texture.
-         */
-        Vector2 position;
-    } 
-    /**
      * \brief The transform of this texture.
      */
-    transform;
+    Transform2d transform;
 
     SDL_Rect* clip = NULL;
     double angle = 0.0;

@@ -26,9 +26,6 @@ int GuiEventHandler()
                 case SDLK_ESCAPE:
                     GuiEventStatus = GUI_EVENT_QUIT;
                     break;
-                case SDLK_SPACE:
-                    GuiEventStatus = GUI_EVENT_SIMSTART;
-                    break;
             }
         }
     }
@@ -47,26 +44,21 @@ int GuiInitSDL()
 {
 
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_EVENTS) < 0) {
-		std::cerr << "SDL could not initialize!\n\tSDL Error: " << SDL_GetError() << std::endl;
+		std::cerr << "[libsdl2-gui/GuiInitSDL] [ERROR] SDL could not initialize!\n\tSDL Error: " << SDL_GetError() << std::endl;
 		return -1;
 	}
-
-	//if (IMG_Init(IMG_INIT_PNG) == 0) {
-    //    std::cerr << "SDL_image could not initialize!\n\tSDL_image Error: " << IMG_GetError() << std::endl;
-    //    return -2;
-	//}
 
    //Initialize SDL_ttf
     if(TTF_Init() == -1)
     {
-        std::cerr << "SDL_ttf could not initialize! SDL_ttf Error: " << TTF_GetError() << std::endl;
+        std::cerr << "[libsdl2-gui/GuiInitSDL] [ERROR] SDL_ttf could not initialize! SDL_ttf Error: " << TTF_GetError() << std::endl;
         return -2;
     }
 
     GuiFont = TTF_OpenFont("nixie.ttf", 24);
     if(GuiFont == NULL)
     {
-        std::cerr << "Failed to load nixie font! SDL_ttf Error: " << TTF_GetError() << std::endl;
+        std::cerr << "[libsdl2-gui/GuiInitSDL] [ERROR] Failed to load nixie font! SDL_ttf Error: " << TTF_GetError() << std::endl;
         return -2;
     }
 

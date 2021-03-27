@@ -21,7 +21,6 @@ extern TTF_Font* GuiFont;
 enum GuiStatus {
     GUI_EVENT_NOTHING = 0,
     GUI_EVENT_QUIT,
-    GUI_EVENT_SIMSTART
 };
 
 /**

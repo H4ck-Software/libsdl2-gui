@@ -1,5 +1,22 @@
 # libsdl2-gui .gitignore file
 
-# ignore CMake build directory
+# Ignore CMake build directory
 
 build/
+CMakeFiles
+
+# Ignore .vscode folder
+
+.vscode/
+
+# Ignore Build Files
+
+*.so
+Makefile
+CMakeCache.txt
+cmake_install.cmake
+
+# Ignore CPM files
+
+cmake/CPM_*.cmake
+_deps/

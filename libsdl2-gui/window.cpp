@@ -6,11 +6,11 @@ Window::Window(int width, int height, std::string window_title, uint32_t window_
     SDL_CreateWindowAndRenderer(width, height, window_flags, &this->window, &this->renderer);
 
     if(this->window == NULL) {
-        std::cerr << "[libsdl2-gui] Failed to create an SDL2 Window!" << std::endl;
+        std::cerr << "[libsdl2-gui/Window::Window] [ERROR] Failed to create an SDL2 Window!" << std::endl;
         return;
     }
 
-    std::cout << "SDL2 Window Created Successfully!" << std::endl;
+    std::cout << "[libsdl2-gui/Window::Window] [INFO] SDL2 Window Created Successfully!" << std::endl;
 
     std::cout << "" << std::endl;
     

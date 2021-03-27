@@ -1,30 +1,38 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(libsdl2-gui)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules)
+project(sdl2-gui VERSION 0.1.0 LANGUAGES CXX)
+
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
+
+include(CPM)
 
 find_package(SDL2 REQUIRED)
 find_package(SDL2_gfx REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
-
-add_library( ${PROJECT_NAME} 
-    ${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}/${PROJECT_NAME}.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}/texture.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}/window.cpp
+CPMAddPackage(
+  NAME Ccache.cmake
+  GITHUB_REPOSITORY TheLartians/Ccache.cmake
+  VERSION 1.2
 )
 
-target_link_libraries( ${PROJECT_NAME}
+add_library( sdl2-gui SHARED
+    "${PROJECT_SOURCE_DIR}/libsdl2-gui/libsdl2-gui.cpp"
+    "${PROJECT_SOURCE_DIR}/libsdl2-gui/texture.cpp"
+    "${PROJECT_SOURCE_DIR}/libsdl2-gui/window.cpp"
+)
+
+target_link_libraries( sdl2-gui
     ${SDL2MAIN_LIBRARY}
     ${SDL2_GFX_LIBRARY}
     ${SDL2_TTF_LIBRARY}
     ${SDL2_LIBRARY}
 )
 
-target_include_directories( ${PROJECT_NAME}
-    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+target_include_directories( sdl2-gui
+    PUBLIC ${PROJECT_SOURCE_DIR}
     PUBLIC ${SDL2_INCLUDE_DIR}
 )
