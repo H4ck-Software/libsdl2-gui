@@ -13,12 +13,6 @@ find_package(SDL2 REQUIRED)
 find_package(SDL2_gfx REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 
-CPMAddPackage(
-  NAME Ccache.cmake
-  GITHUB_REPOSITORY TheLartians/Ccache.cmake
-  VERSION 1.2
-)
-
 add_library( sdl2-gui SHARED
     "${PROJECT_SOURCE_DIR}/libsdl2-gui/libsdl2-gui.cpp"
     "${PROJECT_SOURCE_DIR}/libsdl2-gui/texture.cpp"
