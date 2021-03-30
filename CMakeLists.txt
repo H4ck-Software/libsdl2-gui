@@ -19,11 +19,12 @@ add_library( sdl2-gui SHARED
     "${PROJECT_SOURCE_DIR}/libsdl2-gui/window.cpp"
 )
 
+add_library(SDL2::GUI ALIAS sdl2-gui)
+
 target_link_libraries( sdl2-gui
-    ${SDL2MAIN_LIBRARY}
-    ${SDL2_GFX_LIBRARY}
-    ${SDL2_TTF_LIBRARY}
-    ${SDL2_LIBRARY}
+    SDL2::GFX
+    SDL2::TTF
+    SDL2::Core
 )
 
 target_include_directories( sdl2-gui
