@@ -17,7 +17,7 @@ add_executable(tests tests.cpp)
 
 # add dependencies
 include(cmake/CPM.cmake)
-CPMAddPackage("gh:H4ck-Software/libsdl2-gui@0.1.0-alpha.1")
+CPMAddPackage("gh:H4ck-Software/libsdl2-gui#main@0.1.0")
 
 # link dependencies
 target_link_libraries(tests ${LIBSDL2-GUI_LIBRARY})
