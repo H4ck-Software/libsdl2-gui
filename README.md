@@ -20,7 +20,7 @@ include(cmake/CPM.cmake)
 CPMAddPackage("gh:H4ck-Software/libsdl2-gui#main@0.1.0")
 
 # link dependencies
-target_link_libraries(tests ${LIBSDL2-GUI_LIBRARY})
+target_link_libraries(tests libsdl2-gui)
 ```
 
 ## Contributing
