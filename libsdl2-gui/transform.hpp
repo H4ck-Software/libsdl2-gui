@@ -3,18 +3,18 @@
 #include <cmath>
 
 /**
- * \brief Transform2d Struct.
+ * @brief Transform2d Struct.
  */
 struct Transform2d
 {
     struct position
     {
             /**
-             * \brief X coordinate.
+             * @brief X coordinate.
             */
             float x;
             /**
-             * \brief Y coordinate.
+             * @brief Y coordinate.
             */
             float y;
     } position;
@@ -22,11 +22,11 @@ struct Transform2d
     struct scale
     {
             /**
-             * \brief X scale.
+             * @brief X scale.
             */
             float x;
             /**
-             * \brief Y scale.
+             * @brief Y scale.
             */
             float y;
     } scale;

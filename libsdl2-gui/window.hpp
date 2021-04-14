@@ -19,7 +19,7 @@
 
         void OnRender();
 
-        const int AddRenderCallback(void(*callback)(SDL_Renderer*));
+        int AddRenderCallback(void(*callback)(SDL_Renderer*));
     protected:
         SDL_Window* window = NULL;
         SDL_Renderer* renderer = NULL;
