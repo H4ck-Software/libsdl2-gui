@@ -1,6 +1,6 @@
-# Libsdl2-gui
+# libsdl2-gui
 
-Libsdl2-gui is a C++ library that provides base classes to ease the development of SDL2 applications, avoiding rewriting code to manage events of multiple windows, creating textures from image files, etc.
+libsdl2-gui is a C++ library that provides base classes to ease the development of SDL2 applications, to avoid rewriting code to manage events of multiple windows, creating textures from image files, etc.
 
 ## Installation
 
