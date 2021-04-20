@@ -50,3 +50,8 @@ int Window::AddRenderCallback(void(*callback) (SDL_Renderer * ))
 
     return (this->render_callbacks.size() - 1);
 }
+
+SDL_Window* get_sdlwindow()
+{
+    return this->window;
+}

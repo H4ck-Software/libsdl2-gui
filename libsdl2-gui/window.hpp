@@ -20,6 +20,8 @@
         void OnRender();
 
         int AddRenderCallback(void(*callback)(SDL_Renderer*));
+
+        SDL_Window* get_sdlwindow();
     protected:
         SDL_Window* window = NULL;
         SDL_Renderer* renderer = NULL;
