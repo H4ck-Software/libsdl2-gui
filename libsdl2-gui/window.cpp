@@ -28,15 +28,15 @@ Window::~Window()
 
 void Window::OnRender()
 {
-    SDL_SetRenderDrawColor(this->renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
-    SDL_RenderClear(this->renderer);
+    //SDL_SetRenderDrawColor(this->renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+    //SDL_RenderClear(this->renderer);
 
     for(std::vector<void (* ) (SDL_Renderer * )>::size_type i = 0; i < this->render_callbacks.size(); i++) {
         if(this->render_callbacks.at(i) != NULL)
             this->render_callbacks.at(i) (this->renderer);
     }
 
-    SDL_RenderPresent(this->renderer);
+    //SDL_RenderPresent(this->renderer);
 
     return;
 }
